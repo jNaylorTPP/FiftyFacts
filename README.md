@@ -1,5 +1,29 @@
 # Fifty Dog Facts
 
+## Background
+
+The Salesforce team is building an internal tool that provides a
+question-answering service focused on dogs. This is a **proof of concept**: the
+goal is to demonstrate the technical implementation of such a service without
+investing a large amount of the department's time.
+
+The intended architecture for the proof of concept is:
+
+- Implement the service as an **AgentCore** product.
+- Expose it to Salesforce through our **internal integrations API**.
+- Serve it with a **low-cost, low-performance LLM**.
+
+The LLM answers questions about dogs by referencing a **list of dog facts
+supplied as a text file**. Rather than the model relying on its own training, it
+grounds its answers in this reference file. The proof of concept starts with
+**fifty dog facts**.
+
+**This codebase generates those facts.** It calls an LLM to produce 50 distinct
+dog facts and writes them to a plain text file (one fact per line) that can then
+be handed to the question-answering service as its reference material.
+
+## About this tool
+
 A small reference integration with the OpenAI API. It generates exactly 50
 distinct dog facts and writes them to a text file, one fact per line.
 
